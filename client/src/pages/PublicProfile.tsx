@@ -10,12 +10,12 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
   if (!isActive) return null;
   
-  const petals = Array.from({ length: 20 }, (_, i) => ({
+  const petals = Array.from({ length: 30 }, (_, i) => ({
     id: i,
-    startX: 80 + Math.random() * 40,
-    startY: -10 - Math.random() * 20,
-    delay: Math.random() * 3,
-    duration: 4 + Math.random() * 2,
+    startX: 90 + Math.random() * 30,
+    startY: -5 - Math.random() * 15,
+    delay: Math.random() * 4,
+    duration: 6 + Math.random() * 3,
     size: 8 + Math.random() * 12,
     swayAmount: 30 + Math.random() * 40,
   }));
@@ -94,12 +94,12 @@ export default function PublicProfile({ params }: PublicProfileProps) {
   useEffect(() => {
     // Show petals on initial load
     setShowPetals(true);
-    const hideTimeout = setTimeout(() => setShowPetals(false), 5000);
+    const hideTimeout = setTimeout(() => setShowPetals(false), 8000);
 
     // Then show every 30 seconds
     const interval = setInterval(() => {
       setShowPetals(true);
-      setTimeout(() => setShowPetals(false), 5000);
+      setTimeout(() => setShowPetals(false), 8000);
     }, 30000);
 
     return () => {
