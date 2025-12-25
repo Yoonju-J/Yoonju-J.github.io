@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePublicProfile } from "@/hooks/use-profile";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen, X } from "lucide-react";
@@ -6,6 +6,45 @@ import { SiThreads, SiObsidian } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+
+function PetalAnimation({ isActive }: { isActive: boolean }) {
+  if (!isActive) return null;
+  
+  const petals = Array.from({ length: 15 }, (_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    delay: Math.random() * 2,
+    duration: 3 + Math.random() * 2,
+    size: 10 + Math.random() * 15,
+    rotation: Math.random() * 360,
+  }));
+
+  return (
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-50">
+      {petals.map((petal) => (
+        <div
+          key={petal.id}
+          className="absolute animate-fall"
+          style={{
+            left: `${petal.left}%`,
+            top: '-20px',
+            animationDelay: `${petal.delay}s`,
+            animationDuration: `${petal.duration}s`,
+          }}
+        >
+          <div
+            className="rounded-full bg-gradient-to-br from-pink-200 to-pink-400 opacity-80"
+            style={{
+              width: `${petal.size}px`,
+              height: `${petal.size * 0.6}px`,
+              transform: `rotate(${petal.rotation}deg)`,
+            }}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 function getLinkIcon(url: string, title: string, iconName?: string | null) {
   const urlLower = url.toLowerCase();
@@ -36,6 +75,24 @@ interface PublicProfileProps {
 export default function PublicProfile({ params }: PublicProfileProps) {
   const { data, isLoading } = usePublicProfile(params.username);
   const [showImageModal, setShowImageModal] = useState(false);
+  const [showPetals, setShowPetals] = useState(false);
+
+  useEffect(() => {
+    // Show petals on initial load
+    setShowPetals(true);
+    const hideTimeout = setTimeout(() => setShowPetals(false), 5000);
+
+    // Then show every 30 seconds
+    const interval = setInterval(() => {
+      setShowPetals(true);
+      setTimeout(() => setShowPetals(false), 5000);
+    }, 30000);
+
+    return () => {
+      clearTimeout(hideTimeout);
+      clearInterval(interval);
+    };
+  }, []);
 
   if (isLoading) {
     return (
@@ -59,13 +116,14 @@ export default function PublicProfile({ params }: PublicProfileProps) {
 
   return (
     <div 
-      className="min-h-screen transition-colors duration-500"
+      className="min-h-screen transition-colors duration-500 relative overflow-hidden"
       style={{ 
         backgroundColor: profile.backgroundColor,
         color: profile.textColor,
         fontFamily: profile.font === 'Inter' ? 'sans-serif' : profile.font,
       }}
     >
+      <PetalAnimation isActive={showPetals} />
       <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
