@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { usePublicProfile } from "@/hooks/use-profile";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen } from "lucide-react";
+import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen, X } from "lucide-react";
 import { SiThreads, SiObsidian } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 function getLinkIcon(url: string, title: string, iconName?: string | null) {
   const urlLower = url.toLowerCase();
@@ -33,6 +35,7 @@ interface PublicProfileProps {
 
 export default function PublicProfile({ params }: PublicProfileProps) {
   const { data, isLoading } = usePublicProfile(params.username);
+  const [showImageModal, setShowImageModal] = useState(false);
 
   if (isLoading) {
     return (
@@ -66,14 +69,29 @@ export default function PublicProfile({ params }: PublicProfileProps) {
       <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
-          <div className="relative mb-6">
+          <div className="relative mb-6 cursor-pointer" onClick={() => setShowImageModal(true)} data-testid="button-profile-picture">
             {/* Corona gradient effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-md opacity-70 scale-[1.03] animate-pulse" />
-            <Avatar className="relative w-24 h-24 border-4 shadow-xl" style={{ borderColor: 'white' }}>
+            <Avatar className="relative w-24 h-24 border-4 shadow-xl transition-transform hover:scale-105" style={{ borderColor: 'white' }}>
               <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
               <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
             </Avatar>
           </div>
+
+          {/* Magnified profile picture modal */}
+          <Dialog open={showImageModal} onOpenChange={setShowImageModal}>
+            <DialogContent className="max-w-md p-0 bg-transparent border-none shadow-none">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-2xl opacity-70 scale-105" />
+                <img 
+                  src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`}
+                  alt={profile.displayName || profile.username}
+                  className="relative w-full h-auto rounded-full border-4 border-white shadow-2xl"
+                  data-testid="img-magnified-profile"
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
           {profile.showUsername && (
             <p className="text-lg opacity-70 mb-2">@{profile.username}</p>
           )}
