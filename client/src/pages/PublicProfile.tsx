@@ -1,7 +1,7 @@
 import { usePublicProfile } from "@/hooks/use-profile";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen } from "lucide-react";
-import { SiThreads } from "react-icons/si";
+import { SiThreads, SiObsidian } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
@@ -10,8 +10,9 @@ function getLinkIcon(url: string, title: string, iconName?: string | null) {
   const titleLower = title.toLowerCase();
   
   // Check title for specific matches first
-  if (titleLower.includes('physical ai') || titleLower.includes('team')) return <Link2 className="w-5 h-5" />;
+  if (titleLower.includes('physical ai')) return <BookOpen className="w-5 h-5" />;
   if (titleLower.includes('threads') || urlLower.includes('threads')) return <SiThreads className="w-5 h-5" />;
+  if (titleLower.includes('wiki') || urlLower.includes('obsidian')) return <SiObsidian className="w-5 h-5" />;
   
   // URL-based matching
   if (urlLower.includes('instagram')) return <Instagram className="w-5 h-5" />;
@@ -21,7 +22,7 @@ function getLinkIcon(url: string, title: string, iconName?: string | null) {
   if (urlLower.includes('github')) return <Github className="w-5 h-5" />;
   if (urlLower.includes('facebook')) return <Facebook className="w-5 h-5" />;
   if (urlLower.includes('spotify') || urlLower.includes('music')) return <Music className="w-5 h-5" />;
-  if (urlLower.includes('obsidian') || urlLower.includes('notion') || urlLower.includes('wiki')) return <BookOpen className="w-5 h-5" />;
+  if (urlLower.includes('notion')) return <BookOpen className="w-5 h-5" />;
   if (urlLower.includes('mailto:')) return <Mail className="w-5 h-5" />;
   return <Globe className="w-5 h-5" />;
 }
