@@ -69,9 +69,9 @@ export default function PublicProfile({ params }: PublicProfileProps) {
       <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
-          <div className="relative mb-6 cursor-pointer" onClick={() => setShowImageModal(true)} data-testid="button-profile-picture">
+          <div className="relative mb-6 cursor-pointer group" onClick={() => setShowImageModal(true)} data-testid="button-profile-picture">
             {/* Corona gradient effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-md opacity-70 scale-[1.03] animate-pulse" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-md opacity-70 scale-[1.03] animate-pulse transition-all duration-300 group-hover:opacity-100 group-hover:scale-[1.08] group-hover:blur-lg" />
             <Avatar className="relative w-[6.6rem] h-[6.6rem] border-4 shadow-xl transition-transform hover:scale-105" style={{ borderColor: 'white' }}>
               <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
               <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
