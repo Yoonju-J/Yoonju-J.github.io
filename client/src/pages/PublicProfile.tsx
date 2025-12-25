@@ -1,8 +1,23 @@
 import { usePublicProfile } from "@/hooks/use-profile";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Loader2, ExternalLink } from "lucide-react";
+import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
+
+function getLinkIcon(url: string, iconName?: string | null) {
+  const urlLower = url.toLowerCase();
+  if (urlLower.includes('instagram')) return <Instagram className="w-5 h-5" />;
+  if (urlLower.includes('twitter') || urlLower.includes('x.com')) return <Twitter className="w-5 h-5" />;
+  if (urlLower.includes('linkedin')) return <Linkedin className="w-5 h-5" />;
+  if (urlLower.includes('youtube')) return <Youtube className="w-5 h-5" />;
+  if (urlLower.includes('github')) return <Github className="w-5 h-5" />;
+  if (urlLower.includes('facebook')) return <Facebook className="w-5 h-5" />;
+  if (urlLower.includes('threads')) return <Instagram className="w-5 h-5" />;
+  if (urlLower.includes('spotify') || urlLower.includes('music')) return <Music className="w-5 h-5" />;
+  if (urlLower.includes('obsidian') || urlLower.includes('notion') || urlLower.includes('wiki')) return <BookOpen className="w-5 h-5" />;
+  if (urlLower.includes('mailto:')) return <Mail className="w-5 h-5" />;
+  return <Globe className="w-5 h-5" />;
+}
 
 interface PublicProfileProps {
   params: { username: string };
@@ -74,16 +89,15 @@ export default function PublicProfile({ params }: PublicProfileProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-all hover:scale-[1.02] active:scale-95 shadow-lg flex items-center justify-between group animate-in slide-in-from-bottom-4 fill-mode-backwards"
+              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-all hover:scale-[1.02] active:scale-95 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards"
               style={{ 
                 backgroundColor: profile.buttonColor,
                 color: profile.buttonTextColor,
                 animationDelay: `${i * 100}ms`
               }}
             >
-              <span className="w-6" /> {/* Spacer */}
-              <span className="flex-1 px-2 truncate">{link.title}</span>
-              <ExternalLink className="w-5 h-5 opacity-60 group-hover:opacity-100 transition-opacity" />
+              <span className="opacity-80">{getLinkIcon(link.url, link.icon)}</span>
+              <span className="flex-1 text-left truncate">{link.title}</span>
             </a>
           ))}
         </div>

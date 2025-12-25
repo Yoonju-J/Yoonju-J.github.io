@@ -1,7 +1,22 @@
 import type { Profile, Link } from "@shared/schema";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { ExternalLink } from "lucide-react";
+import { Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Music, BookOpen } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+function getLinkIcon(url: string, iconName?: string | null) {
+  const urlLower = url.toLowerCase();
+  if (urlLower.includes('instagram')) return <Instagram className="w-4 h-4" />;
+  if (urlLower.includes('twitter') || urlLower.includes('x.com')) return <Twitter className="w-4 h-4" />;
+  if (urlLower.includes('linkedin')) return <Linkedin className="w-4 h-4" />;
+  if (urlLower.includes('youtube')) return <Youtube className="w-4 h-4" />;
+  if (urlLower.includes('github')) return <Github className="w-4 h-4" />;
+  if (urlLower.includes('facebook')) return <Facebook className="w-4 h-4" />;
+  if (urlLower.includes('threads')) return <Instagram className="w-4 h-4" />;
+  if (urlLower.includes('spotify') || urlLower.includes('music')) return <Music className="w-4 h-4" />;
+  if (urlLower.includes('obsidian') || urlLower.includes('notion') || urlLower.includes('wiki')) return <BookOpen className="w-4 h-4" />;
+  if (urlLower.includes('mailto:')) return <Mail className="w-4 h-4" />;
+  return <Globe className="w-4 h-4" />;
+}
 
 interface PhonePreviewProps {
   profile: Profile | null;
@@ -73,13 +88,12 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "block w-full py-3 px-4 rounded-xl text-center text-sm font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-md flex items-center justify-between group",
+                "block w-full py-3 px-4 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-md flex items-center gap-3 group",
               )}
               style={buttonStyle}
             >
-              <span className="w-4" /> {/* Spacer for centering */}
-              <span className="truncate flex-1 px-2">{link.title}</span>
-              <ExternalLink className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+              <span className="opacity-80">{getLinkIcon(link.url, link.icon)}</span>
+              <span className="truncate flex-1 text-left">{link.title}</span>
             </a>
           ))}
           {(!links || links.length === 0) && (
