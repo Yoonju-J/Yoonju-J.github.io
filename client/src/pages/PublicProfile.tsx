@@ -66,10 +66,14 @@ export default function PublicProfile({ params }: PublicProfileProps) {
       <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
-          <Avatar className="w-24 h-24 mb-6 border-4 shadow-xl" style={{ borderColor: profile.buttonColor }}>
-            <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
-            <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
-          </Avatar>
+          <div className="relative mb-6">
+            {/* Corona gradient effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-xl opacity-70 scale-110 animate-pulse" />
+            <Avatar className="relative w-24 h-24 border-4 shadow-xl" style={{ borderColor: 'white' }}>
+              <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
+              <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
+            </Avatar>
+          </div>
           {profile.showUsername && (
             <p className="text-lg opacity-70 mb-2">@{profile.username}</p>
           )}

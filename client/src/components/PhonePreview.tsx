@@ -65,10 +65,14 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
         style={containerStyle}
       >
         <div className="mb-6 flex flex-col items-center text-center w-full">
-          <Avatar className="w-20 h-20 mb-4 border-2 shadow-lg" style={{ borderColor: profile.buttonColor }}>
-            <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
-            <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
-          </Avatar>
+          <div className="relative mb-4">
+            {/* Corona gradient effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-lg opacity-70 scale-110 animate-pulse" />
+            <Avatar className="relative w-20 h-20 border-2 shadow-lg" style={{ borderColor: 'white' }}>
+              <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
+              <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
+            </Avatar>
+          </div>
           {profile.showUsername && (
             <p className="text-xs opacity-70 mb-1">@{profile.username}</p>
           )}
