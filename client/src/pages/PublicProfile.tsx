@@ -67,7 +67,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
           <Avatar className="w-24 h-24 mb-6 border-4 shadow-xl" style={{ borderColor: profile.buttonColor }}>
-            <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
+            <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           {profile.showUsername && (

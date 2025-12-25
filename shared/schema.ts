@@ -12,6 +12,7 @@ export const profiles = pgTable("profiles", {
   userId: varchar("user_id").notNull().unique().references(() => users.id),
   username: text("username").notNull().unique(),
   displayName: text("display_name"),
+  avatarUrl: text("avatar_url"),
   showUsername: boolean("show_username").default(true).notNull(),
   bio: text("bio"),
   // Theme settings

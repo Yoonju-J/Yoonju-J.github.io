@@ -66,7 +66,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
       >
         <div className="mb-6 flex flex-col items-center text-center w-full">
           <Avatar className="w-20 h-20 mb-4 border-2 shadow-lg" style={{ borderColor: profile.buttonColor }}>
-            <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
+            <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           {profile.showUsername && (
