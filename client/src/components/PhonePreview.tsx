@@ -100,11 +100,11 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "block w-full py-3 px-4 rounded-xl text-sm font-semibold transition-all hover:scale-[1.02] active:scale-95 shadow-md flex items-center gap-3 group",
+                "block w-full py-3 px-4 rounded-xl text-sm font-semibold transition-colors duration-300 shadow-md flex items-center gap-3 group hover:bg-pink-100",
               )}
               style={buttonStyle}
             >
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100 text-pink-500">{getLinkIcon(link.url, link.title, link.icon)}</span>
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100 text-pink-500 transition-colors duration-300 group-hover:bg-pink-200 group-hover:text-pink-700">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="truncate flex-1 text-left">{link.title}</span>
             </a>
           ))}

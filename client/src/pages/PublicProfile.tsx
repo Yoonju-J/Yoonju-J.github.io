@@ -119,14 +119,14 @@ export default function PublicProfile({ params }: PublicProfileProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-all hover:scale-[1.02] active:scale-95 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards"
+              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:bg-pink-100"
               style={{ 
                 backgroundColor: profile.buttonColor,
                 color: profile.buttonTextColor,
                 animationDelay: `${i * 100}ms`
               }}
             >
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500">{getLinkIcon(link.url, link.title, link.icon)}</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500 transition-colors duration-300 group-hover:bg-pink-200 group-hover:text-pink-700">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="flex-1 text-left truncate">{link.title}</span>
             </a>
           ))}
