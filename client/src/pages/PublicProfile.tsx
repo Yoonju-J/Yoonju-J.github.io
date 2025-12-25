@@ -78,7 +78,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             <p className="text-lg opacity-70 mb-2">@{profile.username}</p>
           )}
           {profile.displayName && (
-            <h1 className="text-2xl font-bold mb-2" style={{ color: '#000000' }}>{profile.displayName}</h1>
+            <h1 className="text-4xl font-bold mb-2" style={{ color: '#000000' }}>{profile.displayName}</h1>
           )}
           {profile.bio && (() => {
             const lines = profile.bio.split('\n');
