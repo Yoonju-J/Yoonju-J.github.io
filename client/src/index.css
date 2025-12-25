@@ -72,29 +72,29 @@
 
 @keyframes cherry-fall {
   0% {
-    transform: translate(0, 0);
+    transform: translateY(0) translateX(0);
     opacity: 0;
   }
   3% {
     opacity: 1;
   }
   20% {
-    transform: translate(-25vw, 20vh) translateX(var(--sway));
+    transform: translateY(20vh) translateX(var(--sway));
   }
   40% {
-    transform: translate(-50vw, 45vh) translateX(calc(var(--sway) * -0.5));
+    transform: translateY(45vh) translateX(calc(var(--sway) * -0.5));
   }
   60% {
-    transform: translate(-75vw, 70vh) translateX(var(--sway));
+    transform: translateY(70vh) translateX(var(--sway));
   }
   80% {
-    transform: translate(-95vw, 90vh) translateX(calc(var(--sway) * -0.3));
+    transform: translateY(90vh) translateX(calc(var(--sway) * -0.3));
   }
   95% {
     opacity: 1;
   }
   100% {
-    transform: translate(-110vw, 115vh) translateX(calc(var(--sway) * 0.2));
+    transform: translateY(115vh) translateX(calc(var(--sway) * 0.2));
     opacity: 0;
   }
 }

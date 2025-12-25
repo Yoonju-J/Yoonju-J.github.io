@@ -12,12 +12,12 @@ function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
   
   const petals = Array.from({ length: 30 }, (_, i) => ({
     id: i,
-    startX: 90 + Math.random() * 30,
+    startX: Math.random() * 100,
     startY: -5 - Math.random() * 15,
     delay: Math.random() * 4,
     duration: 6 + Math.random() * 3,
     size: 8 + Math.random() * 12,
-    swayAmount: 30 + Math.random() * 40,
+    swayAmount: 20 + Math.random() * 30,
   }));
 
   return (
@@ -27,7 +27,7 @@ function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
           key={petal.id}
           className="absolute animate-cherry-fall"
           style={{
-            right: `${petal.startX - 100}%`,
+            left: `${petal.startX}%`,
             top: `${petal.startY}%`,
             animationDelay: `${petal.delay}s`,
             animationDuration: `${petal.duration}s`,
