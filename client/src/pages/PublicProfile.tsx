@@ -47,7 +47,12 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
-          <h1 className="text-2xl font-bold mb-2">@{profile.username}</h1>
+          {profile.displayName && (
+            <h1 className="text-2xl font-bold mb-1">{profile.displayName}</h1>
+          )}
+          {profile.showUsername && (
+            <p className="text-lg opacity-70 mb-2">@{profile.username}</p>
+          )}
           {profile.bio && (() => {
             const lines = profile.bio.split('\n');
             const tagline = lines[0];

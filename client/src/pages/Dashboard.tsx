@@ -241,6 +241,29 @@ export default function Dashboard() {
                   <h3 className="font-bold text-lg mb-4">Profile</h3>
                   <div className="space-y-4">
                     <div className="space-y-2">
+                      <label className="text-sm font-medium">Display Name</label>
+                      <Input 
+                        placeholder="Your full name" 
+                        defaultValue={profile?.displayName || ""}
+                        onBlur={(e) => {
+                          if (e.target.value !== profile?.displayName) {
+                            updateProfile.mutate({ displayName: e.target.value || null });
+                          }
+                        }}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-medium">Show @username</label>
+                      <input 
+                        type="checkbox"
+                        checked={profile?.showUsername ?? true}
+                        onChange={(e) => {
+                          updateProfile.mutate({ showUsername: e.target.checked });
+                        }}
+                        className="w-5 h-5 rounded border-gray-300"
+                      />
+                    </div>
+                    <div className="space-y-2">
                       <label className="text-sm font-medium">Bio</label>
                       <Textarea 
                         placeholder="Tell the world about yourself..." 
@@ -252,6 +275,7 @@ export default function Dashboard() {
                         }}
                         className="resize-none min-h-[100px]"
                       />
+                      <p className="text-xs text-muted-foreground">Tip: First line will be shown as your tagline in a larger size.</p>
                     </div>
                   </div>
                 </div>

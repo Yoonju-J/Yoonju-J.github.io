@@ -46,7 +46,12 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
             <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
-          <h2 className="text-lg font-bold tracking-tight mb-1">@{profile.username}</h2>
+          {profile.displayName && (
+            <h2 className="text-lg font-bold tracking-tight mb-0.5">{profile.displayName}</h2>
+          )}
+          {profile.showUsername && (
+            <p className="text-sm opacity-70 mb-1">@{profile.username}</p>
+          )}
           {profile.bio && (() => {
             const lines = profile.bio.split('\n');
             const tagline = lines[0];

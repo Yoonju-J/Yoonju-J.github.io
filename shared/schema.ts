@@ -11,6 +11,8 @@ export const profiles = pgTable("profiles", {
   id: serial("id").primaryKey(),
   userId: varchar("user_id").notNull().unique().references(() => users.id),
   username: text("username").notNull().unique(),
+  displayName: text("display_name"),
+  showUsername: boolean("show_username").default(true).notNull(),
   bio: text("bio"),
   // Theme settings
   theme: text("theme").default("default").notNull(), // 'default', 'dark', 'custom'
