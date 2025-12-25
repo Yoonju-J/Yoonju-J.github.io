@@ -21,7 +21,7 @@ function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
   }));
 
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden z-50">
+    <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
       {petals.map((petal) => (
         <div
           key={petal.id}
@@ -138,7 +138,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
       }}
     >
       <CherryBlossomAnimation isActive={showPetals} />
-      <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
+      <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center relative z-10">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
           <div className="relative mb-6 cursor-pointer group" onClick={() => setShowImageModal(true)} data-testid="button-profile-picture">
