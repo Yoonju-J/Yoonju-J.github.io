@@ -68,7 +68,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
           <div className="relative mb-6">
             {/* Corona gradient effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-xl opacity-70 scale-110 animate-pulse" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-md opacity-70 scale-[1.03] animate-pulse" />
             <Avatar className="relative w-24 h-24 border-4 shadow-xl" style={{ borderColor: 'white' }}>
               <AvatarImage src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
               <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
