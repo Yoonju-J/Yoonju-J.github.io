@@ -1,17 +1,24 @@
 import type { Profile, Link } from "@shared/schema";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Music, BookOpen } from "lucide-react";
+import { Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen } from "lucide-react";
+import { SiThreads } from "react-icons/si";
 import { cn } from "@/lib/utils";
 
-function getLinkIcon(url: string, iconName?: string | null) {
+function getLinkIcon(url: string, title: string, iconName?: string | null) {
   const urlLower = url.toLowerCase();
+  const titleLower = title.toLowerCase();
+  
+  // Check title for specific matches first
+  if (titleLower.includes('physical ai') || titleLower.includes('team')) return <Link2 className="w-4 h-4" />;
+  if (titleLower.includes('threads') || urlLower.includes('threads')) return <SiThreads className="w-4 h-4" />;
+  
+  // URL-based matching
   if (urlLower.includes('instagram')) return <Instagram className="w-4 h-4" />;
   if (urlLower.includes('twitter') || urlLower.includes('x.com')) return <Twitter className="w-4 h-4" />;
   if (urlLower.includes('linkedin')) return <Linkedin className="w-4 h-4" />;
   if (urlLower.includes('youtube')) return <Youtube className="w-4 h-4" />;
   if (urlLower.includes('github')) return <Github className="w-4 h-4" />;
   if (urlLower.includes('facebook')) return <Facebook className="w-4 h-4" />;
-  if (urlLower.includes('threads')) return <Instagram className="w-4 h-4" />;
   if (urlLower.includes('spotify') || urlLower.includes('music')) return <Music className="w-4 h-4" />;
   if (urlLower.includes('obsidian') || urlLower.includes('notion') || urlLower.includes('wiki')) return <BookOpen className="w-4 h-4" />;
   if (urlLower.includes('mailto:')) return <Mail className="w-4 h-4" />;
@@ -92,7 +99,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
               )}
               style={buttonStyle}
             >
-              <span className="opacity-80">{getLinkIcon(link.url, link.icon)}</span>
+              <span className="opacity-80">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="truncate flex-1 text-left">{link.title}</span>
             </a>
           ))}

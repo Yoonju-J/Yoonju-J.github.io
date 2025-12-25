@@ -1,18 +1,25 @@
 import { usePublicProfile } from "@/hooks/use-profile";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Loader2, Globe, Instagram, Twitter, Linkedin, Youtube, Github, Facebook, Mail, Link2, Music, BookOpen } from "lucide-react";
+import { SiThreads } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 
-function getLinkIcon(url: string, iconName?: string | null) {
+function getLinkIcon(url: string, title: string, iconName?: string | null) {
   const urlLower = url.toLowerCase();
+  const titleLower = title.toLowerCase();
+  
+  // Check title for specific matches first
+  if (titleLower.includes('physical ai') || titleLower.includes('team')) return <Link2 className="w-5 h-5" />;
+  if (titleLower.includes('threads') || urlLower.includes('threads')) return <SiThreads className="w-5 h-5" />;
+  
+  // URL-based matching
   if (urlLower.includes('instagram')) return <Instagram className="w-5 h-5" />;
   if (urlLower.includes('twitter') || urlLower.includes('x.com')) return <Twitter className="w-5 h-5" />;
   if (urlLower.includes('linkedin')) return <Linkedin className="w-5 h-5" />;
   if (urlLower.includes('youtube')) return <Youtube className="w-5 h-5" />;
   if (urlLower.includes('github')) return <Github className="w-5 h-5" />;
   if (urlLower.includes('facebook')) return <Facebook className="w-5 h-5" />;
-  if (urlLower.includes('threads')) return <Instagram className="w-5 h-5" />;
   if (urlLower.includes('spotify') || urlLower.includes('music')) return <Music className="w-5 h-5" />;
   if (urlLower.includes('obsidian') || urlLower.includes('notion') || urlLower.includes('wiki')) return <BookOpen className="w-5 h-5" />;
   if (urlLower.includes('mailto:')) return <Mail className="w-5 h-5" />;
@@ -96,7 +103,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
                 animationDelay: `${i * 100}ms`
               }}
             >
-              <span className="opacity-80">{getLinkIcon(link.url, link.icon)}</span>
+              <span className="opacity-80">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="flex-1 text-left truncate">{link.title}</span>
             </a>
           ))}
