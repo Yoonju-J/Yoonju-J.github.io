@@ -77,7 +77,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
             <p className="text-xs opacity-70 mb-1">@{profile.username}</p>
           )}
           {profile.displayName && (
-            <h2 className="text-2xl font-bold tracking-tight mb-1" style={{ color: '#000000' }}>{profile.displayName}</h2>
+            <h2 className="text-xl font-bold tracking-tight mb-1" style={{ color: '#000000' }}>{profile.displayName}</h2>
           )}
           {profile.bio && (() => {
             const lines = profile.bio.split('\n');
