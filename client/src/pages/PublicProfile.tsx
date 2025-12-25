@@ -10,7 +10,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
   if (!isActive) return null;
   
-  const petals = Array.from({ length: 30 }, (_, i) => ({
+  const petals = Array.from({ length: 60 }, (_, i) => ({
     id: i,
     startX: Math.random() * 100,
     startY: -5 - Math.random() * 15,
