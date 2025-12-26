@@ -150,7 +150,7 @@ export default function PublicProfile() {
           
           <h1 className="text-3xl font-bold mb-2" style={{ color: '#000000' }}>{profile.displayName}</h1>
           
-          {tagline && <p className="text-base opacity-90 leading-relaxed whitespace-nowrap" style={{ color: '#000000' }}>{tagline}</p>}
+          {tagline && <p className="text-base opacity-90 leading-relaxed whitespace-normal text-center md:whitespace-nowrap" style={{ color: '#000000' }}>{tagline}</p>}
           {description && <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap mt-2" style={{ color: '#636363' }}>{description}</p>}
         </div>
 
