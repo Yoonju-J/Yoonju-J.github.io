@@ -181,8 +181,8 @@ export default function PublicProfile() {
         {/* Branding */}
         <div className="mt-16">
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold uppercase tracking-widest opacity-70">
-            <span>Powered by</span>
-            <span className="text-pink-500 font-black">BioLinker</span>
+            <span>On the Record</span>
+            <span className="text-pink-500 font-black">Since 2025</span>
           </span>
         </div>
       </div>
