@@ -23,8 +23,8 @@ const links = [
   { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads" },
-  { id: 6, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian" },
-  { id: 7, title: "Github", url: "https://github.com/Yoonju-J", icon: "github" },
+  { id: 6, title: "Github", url: "https://github.com/Yoonju-J", icon: "github" },
+  { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian" },
 ];
 
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
