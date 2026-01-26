@@ -19,7 +19,7 @@ const profile = {
 
 const links = [
   { id: 1, title: "Homepage", url: "https://example.com", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
-  { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "Physical AI Studying Group for Medical Students, and Engineering Students Worldwide." },
+  { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "Physical AI Studying Group\nfor Medical Students, and Engineering Students Worldwide." },
   { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "" },
@@ -177,7 +177,7 @@ export default function PublicProfile() {
               </span>
               <span className="flex-1 text-left truncate">{link.title}</span>
               {link.tooltip && (
-                <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-2 rounded-lg bg-pink-100 text-pink-700 text-sm font-medium whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md">
+                <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-2 rounded-lg bg-pink-100 text-pink-700 text-sm font-medium whitespace-pre-wrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md">
                   {link.tooltip}
                 </span>
               )}
