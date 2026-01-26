@@ -177,7 +177,7 @@ export default function PublicProfile() {
               </span>
               <span className="flex-1 text-left truncate">{link.title}</span>
               {link.tooltip && (
-                <span className="absolute right-0 bottom-full mb-2 px-3 py-2 rounded-lg bg-sky-100 text-blue-800 text-sm font-medium whitespace-pre text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md">
+                <span className="absolute right-0 bottom-full mb-2 px-3 py-2 rounded-lg bg-white text-pink-700 text-sm font-medium whitespace-pre text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md">
                   {link.tooltip}
                 </span>
               )}
