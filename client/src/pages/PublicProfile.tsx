@@ -18,13 +18,13 @@ const profile = {
 };
 
 const links = [
-  { id: 1, title: "Homepage", url: "https://example.com", icon: "globe" },
-  { id: 2, title: "Physical AI Team", url: "https://www.instagram.com/physicalolo/", icon: "book" },
-  { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram" },
-  { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin" },
-  { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads" },
-  { id: 6, title: "Github", url: "https://github.com/Yoonju-J", icon: "github" },
-  { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian" },
+  { id: 1, title: "Homepage", url: "https://example.com", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
+  { id: 2, title: "Physical AI Team", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "" },
+  { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "" },
+  { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "" },
+  { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "" },
+  { id: 6, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "" },
+  { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "" },
 ];
 
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
@@ -164,7 +164,7 @@ export default function PublicProfile() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
+              className="relative block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
               style={{ 
                 backgroundColor: profile.buttonColor,
                 color: profile.buttonTextColor,
@@ -176,6 +176,11 @@ export default function PublicProfile() {
                 {getLinkIcon(link.icon)}
               </span>
               <span className="flex-1 text-left truncate">{link.title}</span>
+              {link.tooltip && (
+                <span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 px-3 py-2 rounded-lg bg-pink-100 text-pink-700 text-sm font-medium whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 shadow-md">
+                  {link.tooltip}
+                </span>
+              )}
             </a>
           ))}
         </div>
