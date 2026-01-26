@@ -127,7 +127,7 @@ export default function PublicProfile() {
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
           <div className="relative mb-6 cursor-pointer group" onClick={() => setShowImageModal(true)} data-testid="button-profile-picture">
             {/* Corona gradient effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-md opacity-70 scale-[1.03] transition-all duration-300 group-hover:from-pink-400 group-hover:via-purple-400 group-hover:to-pink-400 group-hover:opacity-90" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-300 via-blue-500 to-sky-300 blur-md opacity-70 scale-[1.03] transition-all duration-300 group-hover:from-sky-400 group-hover:via-blue-700 group-hover:to-sky-400 group-hover:opacity-90" />
             <Avatar className="relative w-[6.6rem] h-[6.6rem] border-4 shadow-xl transition-transform hover:scale-105" style={{ borderColor: 'white' }}>
               <AvatarImage src={profile.avatarUrl} />
               <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
