@@ -19,7 +19,7 @@ const profile = {
 
 const links = [
   { id: 1, title: "Homepage", url: "https://example.com", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
-  { id: 2, title: "Physical AI Team", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "" },
+  { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "Physical AI Studying Group for Medical Students, and Engineering Students Worldwide." },
   { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "" },
