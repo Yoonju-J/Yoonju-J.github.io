@@ -18,7 +18,7 @@ const profile = {
 };
 
 const links = [
-  { id: 1, title: "Homepage", url: "https://example.com", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
+  { id: 1, title: "Homepage", url: "https://substack.com/@yoonju", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
   { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "Physical AI Team\nfor Medical/Engineering Students" },
   { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
