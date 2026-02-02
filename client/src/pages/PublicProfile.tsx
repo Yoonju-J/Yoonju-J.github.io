@@ -19,7 +19,7 @@ const profile = {
 
 const links = [
   { id: 1, title: "Homepage", url: "https://substack.com/@yoonju", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
-  { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "Physical AI Team\nfor Medical/Engineering Students" },
+  { id: 2, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "Physical AI Team\nfor Medical/Engineering Students" },
   { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
