@@ -166,7 +166,9 @@ export default function PublicProfile() {
           {links.map((link, i) => (
             <div key={link.id}>
               {link.id === 6 && (
-                <div className="flex items-center justify-center py-2">
+                <div className="flex items-center justify-center gap-2 py-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-300"></span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-300"></span>
                   <span className="w-1.5 h-1.5 rounded-full bg-pink-300"></span>
                 </div>
               )}
