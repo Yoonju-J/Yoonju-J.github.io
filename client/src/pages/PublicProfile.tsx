@@ -23,7 +23,7 @@ const links = [
   { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 4, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
   { id: 5, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "The First Robot Doctor" },
-  { id: 6, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heart", tooltip: "My Archive of Medical/Engineering\ndrawing notes" },
+  { id: 6, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heart", tooltip: "My Archive of Drawing Notes" },
   { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of Medical/Engineering\nstudy notes" },
   { id: 8, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
 ];
