@@ -177,15 +177,23 @@ export default function PublicProfile() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
-                style={{ 
+                className={`relative block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards ${
+                  link.id >= 6 
+                    ? "bg-pink-100 hover:bg-pink-300 text-pink-700" 
+                    : "hover:!bg-pink-100"
+                }`}
+                style={link.id >= 6 ? { animationDelay: `${i * 100}ms` } : { 
                   backgroundColor: profile.buttonColor,
                   color: profile.buttonTextColor,
                   animationDelay: `${i * 100}ms`
                 }}
                 data-testid={`link-${link.id}`}
               >
-                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500 transition-colors duration-300 group-hover:bg-pink-200 group-hover:text-pink-700">
+                <span className={`flex items-center justify-center w-8 h-8 rounded-full transition-colors duration-300 ${
+                  link.id >= 6
+                    ? "bg-pink-200 text-pink-600 group-hover:bg-pink-400 group-hover:text-pink-800"
+                    : "bg-pink-100 text-pink-500 group-hover:bg-pink-200 group-hover:text-pink-700"
+                }`}>
                   {getLinkIcon(link.icon)}
               </span>
               <span className="flex-1 text-left truncate">{link.title}</span>
