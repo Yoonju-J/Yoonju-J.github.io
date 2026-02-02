@@ -164,21 +164,26 @@ export default function PublicProfile() {
         {/* Links */}
         <div className="w-full space-y-4">
           {links.map((link, i) => (
-            <a
-              key={link.id}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
-              style={{ 
-                backgroundColor: profile.buttonColor,
-                color: profile.buttonTextColor,
-                animationDelay: `${i * 100}ms`
-              }}
-              data-testid={`link-${link.id}`}
-            >
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500 transition-colors duration-300 group-hover:bg-pink-200 group-hover:text-pink-700">
-                {getLinkIcon(link.icon)}
+            <div key={link.id}>
+              {link.id === 5 && (
+                <div className="flex items-center justify-center py-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-pink-300"></span>
+                </div>
+              )}
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
+                style={{ 
+                  backgroundColor: profile.buttonColor,
+                  color: profile.buttonTextColor,
+                  animationDelay: `${i * 100}ms`
+                }}
+                data-testid={`link-${link.id}`}
+              >
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500 transition-colors duration-300 group-hover:bg-pink-200 group-hover:text-pink-700">
+                  {getLinkIcon(link.icon)}
               </span>
               <span className="flex-1 text-left truncate">{link.title}</span>
               {link.tooltip && (
@@ -186,7 +191,8 @@ export default function PublicProfile() {
                   {link.tooltip}
                 </span>
               )}
-            </a>
+              </a>
+            </div>
           ))}
         </div>
 
