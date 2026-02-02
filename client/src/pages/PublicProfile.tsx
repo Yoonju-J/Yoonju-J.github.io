@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Instagram, Linkedin, Globe, BookOpen } from "lucide-react";
+import { Instagram, Linkedin, Globe, BookOpen, Palette } from "lucide-react";
 import { SiThreads, SiObsidian, SiGithub } from "react-icons/si";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -24,7 +24,8 @@ const links = [
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 5, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of medical\nand engineering study notes" },
   { id: 6, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
-  { id: 7, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
+  { id: 7, title: "Paint It Blue", url: "#", icon: "palette", tooltip: "My Archive of medical drawing notes" },
+  { id: 8, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
 ];
 
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
@@ -86,6 +87,7 @@ function getLinkIcon(iconType: string) {
     case "threads": return <SiThreads className="w-5 h-5" />;
     case "obsidian": return <SiObsidian className="w-5 h-5" />;
     case "github": return <SiGithub className="w-5 h-5" />;
+    case "palette": return <Palette className="w-5 h-5" />;
     default: return <Globe className="w-5 h-5" />;
   }
 }
