@@ -19,12 +19,12 @@ const profile = {
 
 const links = [
   { id: 1, title: "Homepage", url: "https://substack.com/@yoonju", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
-  { id: 2, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "The First Robot Doctor" },
-  { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
-  { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
-  { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
-  { id: 6, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of medical\nand engineering study notes" },
-  { id: 7, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heart", tooltip: "My Archive of medical drawing notes" },
+  { id: 2, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
+  { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
+  { id: 4, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
+  { id: 5, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "The First Robot Doctor" },
+  { id: 6, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heart", tooltip: "My Archive of medical drawing notes" },
+  { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of medical\nand engineering study notes" },
   { id: 8, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
 ];
 
