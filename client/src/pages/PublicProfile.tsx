@@ -22,10 +22,10 @@ const links = [
   { id: 2, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 4, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
-  { id: 5, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "bot", tooltip: "The First Robot Doctor" },
-  { id: 6, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heartpulse", tooltip: "My Archive of Visual Notes" },
-  { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of Study Notes" },
-  { id: 8, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
+  { id: 5, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
+  { id: 6, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "bot", tooltip: "The First Robot Doctor" },
+  { id: 7, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heartpulse", tooltip: "My Archive of Visual Notes" },
+  { id: 8, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of Study Notes" },
 ];
 
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
@@ -165,7 +165,7 @@ export default function PublicProfile() {
         <div className="w-full space-y-4">
           {links.map((link, i) => (
             <div key={link.id}>
-              {link.id === 5 && (
+              {link.id === 6 && (
                 <div className="flex items-center justify-center py-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-pink-300"></span>
                 </div>
