@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Instagram, Linkedin, Globe, BookOpen, Palette, Heart, HeartPulse } from "lucide-react";
+import { Instagram, Linkedin, Globe, BookOpen, Palette, Heart, HeartPulse, Bot } from "lucide-react";
 import { SiThreads, SiObsidian, SiGithub } from "react-icons/si";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -22,7 +22,7 @@ const links = [
   { id: 2, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 4, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
-  { id: 5, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "book", tooltip: "The First Robot Doctor" },
+  { id: 5, title: "Rovodoc", url: "https://www.instagram.com/rovodoc/", icon: "bot", tooltip: "The First Robot Doctor" },
   { id: 6, title: "Code It Blue", url: "https://www.instagram.com/code.it.blue?igsh=aGljN29mcm9yY2V0", icon: "heartpulse", tooltip: "My Archive of Visual Notes" },
   { id: 7, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian", tooltip: "My Archive of Study Notes" },
   { id: 8, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "My Code Database" },
@@ -84,6 +84,7 @@ function getLinkIcon(iconType: string) {
     case "instagram": return <Instagram className="w-5 h-5" />;
     case "linkedin": return <Linkedin className="w-5 h-5" />;
     case "book": return <BookOpen className="w-5 h-5" />;
+    case "bot": return <Bot className="w-5 h-5" />;
     case "threads": return <SiThreads className="w-5 h-5" />;
     case "obsidian": return <SiObsidian className="w-5 h-5" />;
     case "github": return <SiGithub className="w-5 h-5" />;
